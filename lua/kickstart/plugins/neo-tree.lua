@@ -11,13 +11,28 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    {
+      '\\',
+      function()
+        require('neo-tree.command').execute {
+          toggle = true,
+          position = 'float',
+          source = 'filesystem',
+          reveal = true,
+          focus = true,
+        }
+      end,
+      desc = 'NeoTree (float)',
+      silent = true,
+    },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['l'] = 'open',
+          ['h'] = 'close_node',
         },
       },
     },
