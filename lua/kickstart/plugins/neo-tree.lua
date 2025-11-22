@@ -25,6 +25,20 @@ return {
       desc = 'NeoTree (float)',
       silent = true,
     },
+    {
+      '<S-h>',
+      function()
+        require('neo-tree.command').execute { toggle_hidden = true }
+      end,
+      desc = 'NeoTree: Toggle Hidden Files',
+    },
+    {
+      '<S-i>',
+      function()
+        require('neo-tree.command').execute { toggle_gitignored = true }
+      end,
+      desc = 'NeoTree: Toggle Ignored Files',
+    },
   },
   opts = {
     filesystem = {
