@@ -23,7 +23,9 @@ return {
         }
       end,
       desc = 'NeoTree (float)',
+      noremap = true,
       silent = true,
+      nowait = true,
     },
     {
       '<S-h>',
